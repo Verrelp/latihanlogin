@@ -41,13 +41,13 @@ class UserService {
     const user = await this.findByEmail(email);
     // 1 validasi email, email terdaftar atau tidak, kalau tidak errorkan user tidak terdaftar.
     if (!user) {
-      throw new Error("User tidak ditemukan")
+      throw new Error("User tidak terdaftar")
       // 2 check password, kalau sama sukses kalau beda trow error password tidak sesuai
     } else if (password!=user.password){
-      throw new Error ("Password salah !!")
+      throw new Error ("password tidak sesuai")
     }
     // 3 kasih message berhasil login ketika email dan password berhasil. 
-    return ("Anda berhasil log-in")
+    return ("Anda berhasil masuk")
 
   }
 }
